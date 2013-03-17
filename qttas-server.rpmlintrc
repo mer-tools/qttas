@@ -1,0 +1,5 @@
+# The devel file is in the package, package it is actually a plugin that qt uses to load
+# The testability driver into applications
+addFilter("devel-file-in-non-devel-package")  
+addFilter('doc-file-dependency /usr/share/doc/qttas-dev/examples/hellotraverse/debian/rules')
+addFilter("shlib-policy-name-error")

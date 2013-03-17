@@ -1,0 +1,41 @@
+Name: qttas-server
+Summary: Qt Test Automation Server
+Version: 1.5.4
+Release: 1
+Group: Development/Tools
+License: LGPL
+URL: https://github.com/d0b3rm4n/agent_qt
+Sources:
+  - tdriver-agent_qt-1.5.4.tar.gz
+  - qttas-ui.desktop
+Description: "Qt TAS is a test automation server which provides testability \ninterface.\
+  \ Interface is used to access UI components to \nverify and control them.\n"
+Requires:
+  - qttas-server-plugins
+  - qttas-server-libs
+PkgConfigBR:
+  - QtCore
+  - QtWebKit
+  - x11
+  - xext
+  - xi
+  - xtst
+Configure: none
+Builder: make
+SubPackages:
+  - Name: libs
+    Summary: Qt Test automation server library files
+    Group: Development/Tools
+    Description: Qt TAS development library files
+  - Name: plugins
+    Summary: Qt Test automation server plugins
+    Group: Development/Tools
+    Description: Qt Test Automation Server plugins
+  - Name: devel
+    Summary: Qt Test automation server development headers
+    Group: Development/Tools
+    Description: Qt TAS development header.
+    Requires:
+      - qttas-server-libs
+Patches:
+  - 0001-use-qt_qmlIdForObject-to-set-the-name-of-a-qml-obj.patch
